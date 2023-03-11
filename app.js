@@ -114,10 +114,11 @@ searchBtn.addEventListener('click', function() {
     document.querySelector('.main').style.display = 'none';
     clearInterval(timer);
     const search = document.getElementById('search');
-    if (search.value === null) {
-        console.log('Error');
+    if (search.value === '') {
+        document.getElementById('warning').classList.remove('d-none')
     } else {
         getImages(search.value)
+        document.getElementById('warning').classList.add('d-none')
     }
 
     search.value = ''
